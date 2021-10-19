@@ -1,13 +1,16 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 const mockData = {
-    title: 'Some title',
-    description: "Here is a short description of this project. It's basically a bunch of bullshit that is going to be used to fill the description portion of the read me. Just as a side note, I think that this is an incredibly boring project and would rather something more interesting. ",
+    title: 'Some Title',
+    description: "Here is a short description of this project. It's basically a bunch of bullshit that is going to be used to fill the description portion of the read me. Just as a side note, I think that this is an incredibly boring project and would rather something more interesting.",
     installation: 'Here are some steps / heres a second step / heres a third step / heres a fourth / fifth / last step of them all',
     usage: 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah',
-    confirmOpen: false,
+    confirmOpen: true,
+    contribution: 'Please feel free to contribute by following the steps below. /step one /step two / step three / step 4',
     tests: 'fuck I hate this project its bullshit',
-    license: 'No license',
+    license: 'Academic Free Licence v3.0',
     githubUsername: 'maplesyrupman',
     email: 'will_weiland@hotmail.ca'
   }
@@ -88,7 +91,18 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./README.md', generateMarkdown(data), err => {
+            if (err) return reject(err);
+
+            resolve({
+                ok: true,
+                message: 'File created!'
+            })
+        })
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -96,5 +110,8 @@ function init() {
 }
 
 // Function call to initialize app
-init().then(response => console.log(response));
+// init().then(response => console.log(response));
 
+writeToFile(mockData)
+    .then(success => console.log(success.message))
+    .catch(err => console.log(err.message));
