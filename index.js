@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+const licences = ['No license', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'];
+
 const mockData = {
     title: 'Some Title',
     description: "Here is a short description of this project. It's basically a bunch of bullshit that is going to be used to fill the description portion of the read me. Just as a side note, I think that this is an incredibly boring project and would rather something more interesting.",
@@ -10,7 +12,7 @@ const mockData = {
     confirmOpen: true,
     contribution: 'Please feel free to contribute by following the steps below. /step one /step two / step three / step 4',
     tests: 'fuck I hate this project its bullshit',
-    license: 'Academic Free Licence v3.0',
+    license: 'MIT License',
     githubUsername: 'maplesyrupman',
     email: 'will_weiland@hotmail.ca'
   }
@@ -70,8 +72,8 @@ const questions = [
     {
         type: 'list',
         name: 'license',
-        message: 'Select a licence, or continue without selecting if no licence is required:',
-        choices: ['No license', 'MIT', 'Academic Free Licence v3.0', 'GNU General Public Licence 3.0']
+        message: 'Select a licence:',
+        choices: licences
     },
     {
         type: 'input',
@@ -110,8 +112,12 @@ function init() {
 }
 
 // Function call to initialize app
-// init().then(response => console.log(response));
+// init().then(response => {
+//     writeToFile(response)
+// });
 
-writeToFile(mockData)
-    .then(success => console.log(success.message))
-    .catch(err => console.log(err.message));
+// writeToFile(mockData)
+//     .then(success => console.log(success.message))
+//     .catch(err => console.log(err.message));
+
+writeToFile(mockData);
