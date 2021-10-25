@@ -1,29 +1,19 @@
-# Some Title
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# README Generator
+  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-  Here is a short description of this project. It's basically a bunch of bullshit that is going to be used to fill the description portion of the read me. Just as a side note, I think that this is an incredibly boring project and would rather something more interesting.
-  
-* [Installation](##installation-instructions)
-* [Usage](##usage-information)
-* [Contribution](##contributing)
-* [Tests](##tests)
-* [License](##undefined)
-* [Contact Information](##contact-information)
+  This application allows one to quickly create a high quality README directly from the command line.
   
 ## Installation Instructions
-Here are some steps / heres a second step / heres a third step / heres a fourth / fifth / last step of them all
+Pull code from maplesyrupman/README-generator and run npm i to download dependancies. Once complete, run node index to execute the program.
   
   
 ## Usage Information
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+Run node index to initiate the application. Answer all the prompts. Upon completion of the prompts, you will notice a new markdown file in the current directory. Move this to the respective project directory and voila.
   
-  
-## Contributing
-Please feel free to contribute by following the steps below. /step one /step two / step three / step 4
   
   
 ## Tests
-fuck I hate this project its bullshit
+n/a
   
   
 ## Contact Information
@@ -33,5 +23,5 @@ You can also checkout my [Github](https://github.com/maplesyrupman)
   
   ## License
 
-  This is licenced under the [MIT License](https://opensource.org/licenses/MIT)
+  This is licenced under the [The Unlicense](https://unlicense.org/)
   

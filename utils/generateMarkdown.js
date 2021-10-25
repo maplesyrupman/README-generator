@@ -10,7 +10,7 @@ let licenseStuff = {
   'Apache License 2.0': ['[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', 'https://www.apache.org/licenses/LICENSE-2.0'],
   'MIT License': ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', 'https://opensource.org/licenses/MIT'],
   'Boost Software License 1.0': ['[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)', 'https://www.boost.org/LICENSE_1_0.txt'],
-  'The Unlicese': ['[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)', 'https://unlicense.org/'],
+  'The Unlicense': ['[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)', 'https://unlicense.org/'],
 }
 
 function renderLicenseBadge(license) {
@@ -114,7 +114,6 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ${data.description}
-  ${createTableOfContents(data)}
   ${createInstallationSection(data.installation)}
   ${createUsageSection(data.usage)}
   ${createContributionSection(data.contribution)}

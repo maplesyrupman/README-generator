@@ -42,7 +42,7 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'Delineate the installation instructions. \n Seperate steps with a "/"'
+        message: 'Delineate the installation instructions.'
     },
     {
         type: 'input',
@@ -111,13 +111,7 @@ function init() {
     return inquirer.prompt(questions);
 }
 
-// Function call to initialize app
-// init().then(response => {
-//     writeToFile(response)
-// });
-
-// writeToFile(mockData)
-//     .then(success => console.log(success.message))
-//     .catch(err => console.log(err.message));
-
-writeToFile(mockData);
+init().then(response => {
+   
+    writeToFile(response)
+});
