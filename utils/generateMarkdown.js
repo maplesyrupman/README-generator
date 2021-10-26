@@ -27,9 +27,10 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(licenseData) {
   return licenseData ?
-  `## License
+  `
+## License
 
-  This is licenced under the ${renderLicenseLink(licenseData)}
+This is licenced under the ${renderLicenseLink(licenseData)}
   `
   :
   '';

@@ -21,7 +21,7 @@ If you'd like to get in touch, feel free to send me an email at will_weiland@hot
 
 You can also checkout my [Github](https://github.com/maplesyrupman)
   
-  ## License
+## License
 
-  This is licenced under the [The Unlicense](https://unlicense.org/)
+This is licenced under the [The Unlicense](https://unlicense.org/)
   
