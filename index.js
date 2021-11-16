@@ -94,24 +94,22 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./README.md', generateMarkdown(data), err => {
-            if (err) return reject(err);
-
-            resolve({
-                ok: true,
-                message: 'File created!'
-            })
-        })
+        fs.writeFile('newREADME.md', 'some text', err => {
+            if (err) console.log(err);
+            else {
+                console.log('file created!')
+            }
     })
 }
 
 // TODO: Create a function to initialize app
-function init() {
-    return inquirer.prompt(questions);
-}
+// function init() {
+//     return inquirer.prompt(questions);
+// }
 
-init().then(response => {
+// init().then(response => {
    
-    writeToFile(response)
-});
+//     writeToFile(response)
+// });
+
+writeToFile(mockData)
