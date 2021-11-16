@@ -95,7 +95,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(data) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./output', generateMarkdown(data), err => {
+        fs.writeFile('./output/README.md', generateMarkdown(data), err => {
             if (err) return reject(err);
 
             resolve({
@@ -106,12 +106,8 @@ function writeToFile(data) {
     })
 }
 
-// TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions);
 }
 
-init().then(response => {
-    console.log(response)
-    writeToFile(response)
-}).catch(console.log)
+init().then(response => writeToFile).catch(console.log)
