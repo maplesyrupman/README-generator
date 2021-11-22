@@ -93,21 +93,27 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
+const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
-        fs.writeFile('./output/README.md', generateMarkdown(data), err => {
+        fs.writeFile('./output/README.md', generateMarkdown(fileContent), err => {
             if (err) return reject(err);
 
             resolve({
                 ok: true,
-                message: 'File created!'
+                message: 'File Created!'
             })
         })
-    })
-}
+    });
+};
+
 
 function init() {
     return inquirer.prompt(questions);
 }
 
-init().then(response => writeToFile).catch(console.log)
+init().then(response => {
+    return writeFile(response)
+})
+.then(response => {
+    console.log(response)
+})
