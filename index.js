@@ -93,23 +93,27 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-        fs.writeFile('newREADME.md', 'some text', err => {
-            if (err) console.log(err);
-            else {
-                console.log('file created!')
-            }
-    })
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./output/README.md', generateMarkdown(fileContent), err => {
+            if (err) return reject(err);
+
+            resolve({
+                ok: true,
+                message: 'File Created!'
+            })
+        })
+    });
+};
+
+
+function init() {
+    return inquirer.prompt(questions);
 }
 
-// TODO: Create a function to initialize app
-// function init() {
-//     return inquirer.prompt(questions);
-// }
-
-// init().then(response => {
-   
-//     writeToFile(response)
-// });
-
-writeToFile(mockData)
+init().then(response => {
+    return writeFile(response)
+})
+.then(response => {
+    console.log(response)
+})
